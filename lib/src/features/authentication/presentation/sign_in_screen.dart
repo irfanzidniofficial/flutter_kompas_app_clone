@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_form_field_widget.dart';
+import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/constants/app_values.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -61,8 +62,11 @@ class _SignInScreenState extends State<SignInScreen> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'Tidak punya KG Media ID?',
+              CustomTextButton(
+                text: 'Tidak punya KG Media ID?',
+                onPressed: () {
+                  GoRouter.of(context).go('/sign-up');
+                },
                 style: blueTextColor.copyWith(
                   fontSize: 16,
                   decoration: TextDecoration.underline,

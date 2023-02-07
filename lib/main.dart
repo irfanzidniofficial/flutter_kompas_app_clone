@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/sign_up_scren.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,13 +11,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+      routerConfig: goRouter,
     );
   }
 }
