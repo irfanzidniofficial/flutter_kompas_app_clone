@@ -2,7 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/constants/app_values.dart';
+import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -255,9 +256,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 PrimaryButton(
                   text: currentIndex == 0 ? 'Ayo Mulai' : 'Lanjutkan',
                   onPressed: () {
-                    if (currentIndex != null) {
-                      carouselController.nextPage();
-                    }
+                    currentIndex == 3
+                        ? GoRouter.of(context).go('/sign-in')
+                        : carouselController.nextPage();
                   },
                 ),
                 gapH32,
