@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/sign_up_scren.dart';
+import 'package:flutter_kompas_app_clone/src/features/news/presentation/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+      home: const HomeScreen(),
     );
   }
 }
