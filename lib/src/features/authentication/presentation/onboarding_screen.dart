@@ -168,7 +168,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           Text(
                             subtitles[currentIndex = 1],
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 12,
                               color: Colors.white,
                             ),
