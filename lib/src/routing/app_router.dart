@@ -1,6 +1,7 @@
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/sign_in_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/sign_up_scren.dart';
+import 'package:flutter_kompas_app_clone/src/features/news/presentation/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final goRouter = GoRouter(
