@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 
-import 'package:flutter_kompas_app_clone/src/features/news/presentation/home_screen.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +16,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
+        appBarTheme: const AppBarTheme(
+          actionsIconTheme: IconThemeData(),
+          backgroundColor: Colors.black87,
+          foregroundColor: Colors.white,
+          elevation: 0,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black, // background (button) color
+            foregroundColor: Colors.white, // foreground (text) color
+          ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
       ),
       routerConfig: goRouter,
     );

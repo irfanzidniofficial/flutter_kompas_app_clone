@@ -1,19 +1,26 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import '../constants/app_sizes.dart';
 
 /// Custom text button with a fixed height
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton(
-      {super.key, required this.text, this.style, this.onPressed});
+  CustomTextButton({
+    Key? key,
+    required this.text,
+    this.height = Sizes.p48,
+    this.style,
+    this.onPressed,
+  }) : super(key: key);
   final String text;
   final TextStyle? style;
   final VoidCallback? onPressed;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Sizes.p48,
+      height: height,
       child: TextButton(
         onPressed: onPressed,
         child: Text(

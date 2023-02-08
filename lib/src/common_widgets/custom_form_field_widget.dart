@@ -6,13 +6,13 @@ class CustomFormFieldWidget extends StatelessWidget {
   const CustomFormFieldWidget({
     super.key,
     required this.labelText,
-    required this.controller,
+    this.controller,
     this.isObsecure = false,
   });
 
   final String labelText;
   final bool isObsecure;
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {

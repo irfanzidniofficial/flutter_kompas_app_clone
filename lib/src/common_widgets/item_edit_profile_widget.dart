@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
+import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 
 class ItemEditProfileWidget extends StatelessWidget {
@@ -19,6 +19,7 @@ class ItemEditProfileWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
             title,
@@ -26,6 +27,7 @@ class ItemEditProfileWidget extends StatelessWidget {
               fontWeight: medium,
             ),
           ),
+          gapH4,
           Text(
             subtitles,
             style: greySubtitleTextStyle.copyWith(
@@ -33,10 +35,13 @@ class ItemEditProfileWidget extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          CustomTextButton(
-            text: 'Lengkapi Profil',
-            style: blueTextColor.copyWith(fontSize: 16),
-          )
+          TextButton(
+              onPressed: () {},
+              child: Text(
+                'Lengkapi Profile',
+                style: blueTextColor.copyWith(fontSize: 16),
+                textAlign: TextAlign.start,
+              ))
         ],
       ),
     );
