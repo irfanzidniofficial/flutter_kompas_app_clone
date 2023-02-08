@@ -4,6 +4,7 @@ import 'package:flutter_kompas_app_clone/src/common_widgets/image_profile_widget
 import 'package:flutter_kompas_app_clone/src/common_widgets/item_edit_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -16,40 +17,159 @@ class ProfileScreen extends StatelessWidget {
           'Profile',
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                gapH32,
-                const ImageProfileWidget(
-                  sizedImage: 85,
-                ),
-                gapH24,
-                Text(
-                  'John Doe',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 24,
-                    fontWeight: medium,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  gapH32,
+                  const ImageProfileWidget(
+                    sizedImage: 85,
                   ),
-                ),
-                gapH24,
-                Text(
-                  'KG Media ID',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 16,
+                  gapH24,
+                  Text(
+                    'John Doe',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 24,
+                      fontWeight: medium,
+                    ),
                   ),
-                ),
-                gapH12,
-                Text(
-                  'johndoe@gmail.com',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 16,
+                  gapH24,
+                  Text(
+                    'KG Media ID',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                    ),
                   ),
+                  gapH12,
+                  Text(
+                    'johndoe@gmail.com',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                    ),
+                  ),
+                  gapH48,
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            gapH20,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: CustomTextButton(
+                text: 'Ubah Profil',
+                style: blueTextColor.copyWith(
+                  fontSize: 16,
+                  decoration: TextDecoration.underline,
                 ),
+
+                onPressed: () => context.go('/edit-profile'),
+              ),
+            ),
+            gapH20,
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            ItemEditProfileWidget(
+              subtitles: 'Pilih Gender',
+              title: 'Gender',
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            ItemEditProfileWidget(
+              subtitles: 'Tanggal Lahir',
+              title: 'Pilih Tanggal Lahir',
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            ItemEditProfileWidget(
+              subtitles: 'Status Pernikahan',
+              title: 'Status Pernikahan',
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            ItemEditProfileWidget(
+              subtitles: 'No Handphone',
+              title: 'No Handphone',
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            ItemEditProfileWidget(
+              subtitles: 'Alamat Jalan',
+              title: 'Alamat',
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            ItemEditProfileWidget(
+              subtitles: 'Pendidikan Terakhir',
+              title: 'Pendidikan Terakhir',
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            ItemEditProfileWidget(
+              title: 'Pekerjaan',
+              subtitles: 'Pekerjaan Terakhir',
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              child: CustomTextButton(
+                text: 'Hapus Akun',
+                style: blueTextColor.copyWith(
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              child: CustomTextButton(
+                text: 'Logout',
+                style: blueTextColor.copyWith(
+                  fontSize: 16,
+                  color: Colors.red,
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+          ],
+        ),
+
                 gapH48,
               ],
             ),
@@ -81,6 +201,7 @@ class ProfileScreen extends StatelessWidget {
             title: 'Gender',
           ),
         ],
+
       ),
     );
   }

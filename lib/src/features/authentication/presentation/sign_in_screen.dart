@@ -82,15 +82,23 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               gapH12,
               CustomTextButton(
+
                 text: 'Nanti saja',
+
                 style: blackTextStyle.copyWith(
                   fontSize: 18,
                   fontWeight: medium,
                 ),
                 onPressed: () {
+
+                  context.go('/profile');
+                },
+              )
+
                   GoRouter.of(context).go('/main');
                 },
               ),
+
             ],
           )
         ],
