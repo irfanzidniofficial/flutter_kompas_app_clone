@@ -70,6 +70,7 @@ class ProfileScreen extends StatelessWidget {
                   fontSize: 16,
                   decoration: TextDecoration.underline,
                 ),
+
                 onPressed: () => context.go('/edit-profile'),
               ),
             ),
@@ -168,6 +169,39 @@ class ProfileScreen extends StatelessWidget {
             ),
           ],
         ),
+
+                gapH48,
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 17,
+            color: lightGreyColor,
+          ),
+          gapH20,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: CustomTextButton(
+              text: 'Ubah Profil',
+              style: blueTextStyle.copyWith(
+                fontSize: 16,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
+          gapH20,
+          Container(
+            width: double.infinity,
+            height: 17,
+            color: lightGreyColor,
+          ),
+          const ItemEditProfileWidget(
+            subtitles: 'Pilih Gender',
+            title: 'Gender',
+          ),
+        ],
+
       ),
     );
   }
