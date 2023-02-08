@@ -106,11 +106,11 @@ class EditProfileScreen extends StatelessWidget {
             isObsecure: true,
           ),
           gapH48,
-          PrimaryButton(text: 'Simpan'),
+          const PrimaryButton(text: 'Simpan'),
           gapH24,
           RichText(
             textAlign: TextAlign.justify,
-            text: TextSpan(
+            text: const TextSpan(
               text:
                   'Dengan menekan tombol “Lanjutkan”, kamu menyetujui bahwa data dan informasi KG Media ID milikmu akan digunakan untuk memberikan layanan sesuai  ',
               style: TextStyle(

@@ -5,7 +5,7 @@ import '../constants/app_sizes.dart';
 
 /// Custom text button with a fixed height
 class CustomTextButton extends StatelessWidget {
-  CustomTextButton({
+  const CustomTextButton({
     Key? key,
     required this.text,
     this.height = Sizes.p48,
