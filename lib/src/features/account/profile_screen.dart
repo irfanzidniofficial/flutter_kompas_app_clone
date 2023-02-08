@@ -64,7 +64,7 @@ class ProfileScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: CustomTextButton(
               text: 'Ubah Profil',
-              style: blueTextColor.copyWith(
+              style: blueTextStyle.copyWith(
                 fontSize: 16,
                 decoration: TextDecoration.underline,
               ),
@@ -76,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
             height: 17,
             color: lightGreyColor,
           ),
-          ItemEditProfileWidget(
+          const ItemEditProfileWidget(
             subtitles: 'Pilih Gender',
             title: 'Gender',
           ),

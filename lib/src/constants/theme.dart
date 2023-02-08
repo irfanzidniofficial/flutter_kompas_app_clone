@@ -30,11 +30,11 @@ TextStyle greySubtitleTextStyle = GoogleFonts.roboto(
   color: greySubtitleColor,
 );
 
-TextStyle orangeTextColor = GoogleFonts.roboto(
+TextStyle orangeTextStyle = GoogleFonts.roboto(
   color: orangeColor,
 );
 
-TextStyle blueTextColor = GoogleFonts.roboto(
+TextStyle blueTextStyle = GoogleFonts.roboto(
   color: blueColor,
 );
 

@@ -67,7 +67,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 onPressed: () {
                   GoRouter.of(context).go('/sign-up');
                 },
-                style: blueTextColor.copyWith(
+                style: blueTextStyle.copyWith(
                   fontSize: 16,
                   decoration: TextDecoration.underline,
                 ),
@@ -81,12 +81,15 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               gapH12,
-              Text(
-                'Nanti Saja',
+              CustomTextButton(
+                text: 'Nanti saja',
                 style: blackTextStyle.copyWith(
                   fontSize: 18,
                   fontWeight: medium,
                 ),
+                onPressed: () {
+                  GoRouter.of(context).go('/main');
+                },
               ),
             ],
           )

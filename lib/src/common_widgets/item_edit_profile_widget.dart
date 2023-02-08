@@ -35,7 +35,7 @@ class ItemEditProfileWidget extends StatelessWidget {
           ),
           CustomTextButton(
             text: 'Lengkapi Profil',
-            style: blueTextColor.copyWith(fontSize: 16),
+            style: blueTextStyle.copyWith(fontSize: 16),
           )
         ],
       ),
