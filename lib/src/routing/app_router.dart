@@ -5,6 +5,7 @@ import 'package:flutter_kompas_app_clone/src/features/authentication/presentatio
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/sign_up_scren.dart';
 
 import 'package:flutter_kompas_app_clone/src/features/menu/presentation/menu_screen.dart';
+import 'package:flutter_kompas_app_clone/src/features/news/presentation/detail_news_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/saved/presentation/saved_screen.dart';
 import 'package:flutter_kompas_app_clone/src/routing/main_screen.dart';
 
@@ -45,6 +46,10 @@ final goRouter = GoRouter(
         GoRoute(
           path: 'menu',
           builder: (context, state) => const MenuScreen(),
+        ),
+        GoRoute(
+          path: 'detail-news',
+          builder: (context, state) => const DetailNewsScreen(),
         ),
       ],
     ),
