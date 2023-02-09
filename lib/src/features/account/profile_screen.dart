@@ -79,7 +79,7 @@ class ProfileScreen extends StatelessWidget {
               height: 17,
               color: lightGreyColor,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               subtitles: 'Pilih Gender',
               title: 'Gender',
             ),
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
               thickness: 1,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               subtitles: 'Tanggal Lahir',
               title: 'Pilih Tanggal Lahir',
             ),
@@ -95,7 +95,7 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
               thickness: 1,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               subtitles: 'Status Pernikahan',
               title: 'Status Pernikahan',
             ),
@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
               height: 17,
               color: lightGreyColor,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               subtitles: 'No Handphone',
               title: 'No Handphone',
             ),
@@ -112,7 +112,7 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
               thickness: 1,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               subtitles: 'Alamat Jalan',
               title: 'Alamat',
             ),
@@ -121,7 +121,7 @@ class ProfileScreen extends StatelessWidget {
               height: 17,
               color: lightGreyColor,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               subtitles: 'Pendidikan Terakhir',
               title: 'Pendidikan Terakhir',
             ),
@@ -129,7 +129,7 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
               thickness: 1,
             ),
-            ItemEditProfileWidget(
+            const ItemEditProfileWidget(
               title: 'Pekerjaan',
               subtitles: 'Pekerjaan Terakhir',
             ),
@@ -167,7 +167,7 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
             ),
           ],
-        ),
+
         // gapH48,
         // Container(
         //   width: double.infinity,
@@ -195,6 +195,7 @@ class ProfileScreen extends StatelessWidget {
         //   subtitles: 'Pilih Gender',
         //   title: 'Gender',
         // ),
+
       ),
     );
   }
