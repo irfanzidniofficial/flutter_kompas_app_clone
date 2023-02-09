@@ -86,7 +86,7 @@ class EditProfileScreen extends StatelessWidget {
                   isObsecure: true,
                 ),
               ),
-              gapW4,
+              gapW8,
               Expanded(
                 child: CustomFormFieldWidget(
                   labelText: 'Kode Pos',

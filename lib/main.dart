@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 
 void main() {
@@ -15,10 +17,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        scaffoldBackgroundColor: whiteColor,
         appBarTheme: const AppBarTheme(
           actionsIconTheme: IconThemeData(),
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.black,
           foregroundColor: Colors.white,
           elevation: 0,
         ),

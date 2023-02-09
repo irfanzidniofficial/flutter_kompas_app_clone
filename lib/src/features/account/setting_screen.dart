@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
-import 'package:flutter_kompas_app_clone/src/common_widgets/image_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/setting_title_widget.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
@@ -28,35 +27,32 @@ class SettingScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: 30,
             ),
-            child: Row(
-              children: [
-                const ImageProfileWidget(
-                  sizedImage: 55,
-                ),
-                gapW20,
-                GestureDetector(
-                  onTap: () {
-                    context.go('/profile');
-                  },
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Hi, John Doe',
-                        style: blackTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: semiBold,
-                        ),
-                      ),
-                      gapH4,
-                      Text(
-                        'johndoe@gmail.com',
-                        style: blackTextStyle,
-                      ),
-                    ],
+            child: GestureDetector(
+              onTap: () => context.go('/menu'),
+              child: ListTile(
+                leading: CircleAvatar(
+                  radius: 28,
+                  foregroundColor: purpleColor,
+                  child: Text(
+                    'I',
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 18,
+                      fontWeight: semiBold,
+                    ),
                   ),
                 ),
-              ],
+                title: Text(
+                  'Hi, John Doe',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semiBold,
+                  ),
+                ),
+                subtitle: Text(
+                  'johndoe@gmail.com',
+                  style: blackTextStyle,
+                ),
+              ),
             ),
           ),
           gapH20,
