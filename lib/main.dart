@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 
 void main() {
