@@ -88,7 +88,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   fontWeight: medium,
                 ),
                 onPressed: () {
-                  context.go('/profile');
+                  context.go('/setting');
                 },
               )
 
