@@ -35,20 +35,6 @@ class ItemEditProfileWidget extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-
-          TextButton(
-              onPressed: () {},
-              child: Text(
-                'Lengkapi Profile',
-                style: blueTextColor.copyWith(fontSize: 16),
-                textAlign: TextAlign.start,
-              ))
-
-          CustomTextButton(
-            text: 'Lengkapi Profil',
-            style: blueTextStyle.copyWith(fontSize: 16),
-          )
-
         ],
       ),
     );

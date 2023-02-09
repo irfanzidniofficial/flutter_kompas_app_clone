@@ -66,11 +66,10 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: CustomTextButton(
                 text: 'Ubah Profil',
-                style: blueTextColor.copyWith(
+                style: blueTextStyle.copyWith(
                   fontSize: 16,
                   decoration: TextDecoration.underline,
                 ),
-
                 onPressed: () => context.go('/edit-profile'),
               ),
             ),
@@ -143,7 +142,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               child: CustomTextButton(
                 text: 'Hapus Akun',
-                style: blueTextColor.copyWith(
+                style: blueTextStyle.copyWith(
                   fontSize: 16,
                 ),
               ),
@@ -156,7 +155,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               child: CustomTextButton(
                 text: 'Logout',
-                style: blueTextColor.copyWith(
+                style: blueTextStyle.copyWith(
                   fontSize: 16,
                   color: Colors.red,
                 ),
@@ -169,39 +168,33 @@ class ProfileScreen extends StatelessWidget {
             ),
           ],
         ),
-
-                gapH48,
-              ],
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            height: 17,
-            color: lightGreyColor,
-          ),
-          gapH20,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: CustomTextButton(
-              text: 'Ubah Profil',
-              style: blueTextStyle.copyWith(
-                fontSize: 16,
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ),
-          gapH20,
-          Container(
-            width: double.infinity,
-            height: 17,
-            color: lightGreyColor,
-          ),
-          const ItemEditProfileWidget(
-            subtitles: 'Pilih Gender',
-            title: 'Gender',
-          ),
-        ],
-
+        // gapH48,
+        // Container(
+        //   width: double.infinity,
+        //   height: 17,
+        //   color: lightGreyColor,
+        // ),
+        // gapH20,
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(horizontal: 30),
+        //   child: CustomTextButton(
+        //     text: 'Ubah Profil',
+        //     style: blueTextStyle.copyWith(
+        //       fontSize: 16,
+        //       decoration: TextDecoration.underline,
+        //     ),
+        //   ),
+        // ),
+        // gapH20,
+        // Container(
+        //   width: double.infinity,
+        //   height: 17,
+        //   color: lightGreyColor,
+        // ),
+        // const ItemEditProfileWidget(
+        //   subtitles: 'Pilih Gender',
+        //   title: 'Gender',
+        // ),
       ),
     );
   }
