@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kompas_app_clone/src/common_widgets/news_card.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:go_router/go_router.dart';
@@ -21,14 +22,18 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).go('/search');
+            },
             icon: const Icon(
               Icons.search,
               size: 30.0,
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).go('/profile');
+            },
             icon: const Icon(
               Icons.account_circle,
               size: 30.0,
@@ -59,6 +64,30 @@ class HomeScreen extends StatelessWidget {
             onPressedMore: () {},
           ),
           gapH40,
+          NewsCard(
+            category: 'Bola',
+            image: 'assets/img_news_two.png',
+            title:
+                'PSIS Vc Persib: Tanpa dua Pilar Inti, Luis Milla Punya dbakbk djadkjab ajkafka',
+            onTap: () {},
+            onPressedMore: () {},
+          ),
+          NewsCard(
+            category: 'Bola',
+            image: 'assets/img_news_two.png',
+            title:
+                'PSIS Vc Persib: Tanpa dua Pilar Inti, Luis Milla Punya dbakbk djadkjab ajkafka',
+            onTap: () {},
+            onPressedMore: () {},
+          ),
+          NewsCard(
+            category: 'Bola',
+            image: 'assets/img_news_two.png',
+            title:
+                'PSIS Vc Persib: Tanpa dua Pilar Inti, Luis Milla Punya dbakbk djadkjab ajkafka',
+            onTap: () {},
+            onPressedMore: () {},
+          ),
         ],
       ),
     );

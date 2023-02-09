@@ -8,13 +8,18 @@ class DetailMenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Bola',
         ),
       ),
       body: ListView(
-        children: [
-          NewsCard(),
+        children: const [
+          NewsCard(
+            category: 'Bola',
+            image: 'assets/img_news_two.png',
+            title:
+                'Hasil Indonesia Masters 2023: Selamat Datang Kembali,Praveen/Melati!',
+          ),
         ],
       ),
     );

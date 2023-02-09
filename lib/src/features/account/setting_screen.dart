@@ -16,104 +16,108 @@ class SettingScreen extends StatelessWidget {
           'Pengaturan',
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: [
-          const SettingTitleWidget(
-            title: 'KG Media ID',
-          ),
-          gapH20,
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-            ),
-            child: GestureDetector(
-              onTap: () => context.go('/menu'),
-              child: ListTile(
-                leading: CircleAvatar(
-                  radius: 28,
-                  foregroundColor: purpleColor,
-                  child: Text(
-                    'I',
-                    style: whiteTextStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: semiBold,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SettingTitleWidget(
+                title: 'KG Media ID',
+              ),
+              gapH20,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: GestureDetector(
+                  onTap: () => context.go('/menu'),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 28,
+                      foregroundColor: purpleColor,
+                      child: Text(
+                        'I',
+                        style: whiteTextStyle.copyWith(
+                          fontSize: 18,
+                          fontWeight: semiBold,
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      'Hi, John Doe',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      'johndoe@gmail.com',
+                      style: blackTextStyle,
                     ),
                   ),
                 ),
-                title: Text(
-                  'Hi, John Doe',
+              ),
+              gapH20,
+              const SettingTitleWidget(
+                title: 'Aktivitasmu',
+              ),
+              gapH16,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: CustomTextButton(
+                  text: 'Baca Nanti',
                   style: blackTextStyle.copyWith(
                     fontSize: 16,
-                    fontWeight: semiBold,
                   ),
                 ),
-                subtitle: Text(
-                  'johndoe@gmail.com',
-                  style: blackTextStyle,
+              ),
+              gapH16,
+              const SettingTitleWidget(
+                title: 'Pengaturan',
+              ),
+              gapH16,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: CustomTextButton(
+                  text: 'Pengaturan Minat Untukmu',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
                 ),
               ),
-            ),
-          ),
-          gapH20,
-          const SettingTitleWidget(
-            title: 'Aktivitasmu',
-          ),
-          gapH16,
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-            ),
-            child: CustomTextButton(
-              text: 'Baca Nanti',
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
+              gapH16,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: CustomTextButton(
+                  text: 'Baca Nanti',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                ),
               ),
-            ),
-          ),
-          gapH16,
-          const SettingTitleWidget(
-            title: 'Pengaturan',
-          ),
-          gapH16,
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-            ),
-            child: CustomTextButton(
-              text: 'Pengaturan Minat Untukmu',
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
+              gapH16,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                ),
+                child: CustomTextButton(
+                  text: 'Baca Nanti',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                ),
               ),
-            ),
-          ),
-          gapH16,
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-            ),
-            child: CustomTextButton(
-              text: 'Baca Nanti',
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
+              gapH16,
+              const SettingTitleWidget(
+                title: 'Bantuan dan Lainnya',
               ),
-            ),
-          ),
-          gapH16,
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-            ),
-            child: CustomTextButton(
-              text: 'Baca Nanti',
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
-              ),
-            ),
-          ),
-          gapH16,
-          const SettingTitleWidget(
-            title: 'Bantuan dan Lainnya',
+            ],
           ),
         ],
       ),

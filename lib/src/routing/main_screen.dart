@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
-import 'package:flutter_kompas_app_clone/src/features/menu/presentation/menu_screen.dart';
+
 import 'package:flutter_kompas_app_clone/src/features/news/presentation/home_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/saved/presentation/saved_screen.dart';
+
+import '../features/menu/presentasion/menu_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
