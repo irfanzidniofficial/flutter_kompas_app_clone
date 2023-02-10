@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/news_card.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../common_widgets/heading_news_widget.dart';
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              GoRouter.of(context).go('/search');
+              context.pushNamed(AppRoute.search.name);
             },
             icon: const Icon(
               Icons.search,
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              GoRouter.of(context).go('/profile');
+              context.pushNamed(AppRoute.profile.name);
             },
             icon: const Icon(
               Icons.account_circle,

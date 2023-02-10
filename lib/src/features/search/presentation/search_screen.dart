@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -7,41 +6,42 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _controller = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search'),
+        title: const Text(
+          "Search",
+        ),
       ),
-      body: Container(
-        width: double.infinity,
-        height: 67.0,
-        decoration: BoxDecoration(
-          color: lightGreyColor,
-        ),
-        child: Row(
-          children: [
-            Icon(
-              Icons.search,
-              size: 30.0,
-              color: greyColor,
-            ),
-            gapW12,
-            // const TextField(
-            //   decoration: InputDecoration(
-            //     border: InputBorder.none,
-            //     hintText: 'Masukan kata kunci pencarian',
-            //   ),
-            // ),
-
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.cancel,
-                color: greyColor,
-                size: 30.0,
-              ),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [
+          Container(
+            height: 67,
+            color: lightGreyColor,
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            child: ValueListenableBuilder<TextEditingValue>(
+                valueListenable: _controller,
+                builder: (context, value, _) {
+                  return TextField(
+                      autofocus: false,
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.search),
+                        hintText: 'Masukan kata kunci pencarian',
+                        suffixIcon: value.text.isNotEmpty
+                            ? IconButton(
+                                onPressed: () {
+                                  _controller.clear();
+                                },
+                                icon: Icon(Icons.clear),
+                              )
+                            : null,
+                      ),
+                      onChanged: (text) {});
+                }),
+          )
+        ],
       ),
     );
   }

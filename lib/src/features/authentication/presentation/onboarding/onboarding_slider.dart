@@ -159,6 +159,192 @@ class OnboardingSliderThird extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Stack(
+      children: [
+        Positioned(
+          left: 0,
+          bottom: 0,
+          right: 0,
+          top: 0,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                bottom: 0,
+                right: 0,
+                top: 50,
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 82,
+                      child: Image.asset(
+                        'assets/img_slider_two.png',
+                        width: 281,
+                        height: 588,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 18,
+                      child: Container(),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 82,
+                      child: Container(
+                        color: Colors.black.withOpacity(0.7),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 18,
+                      child: Container(
+                        color: whiteColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                left: 0,
+                top: 150,
+                bottom: 0,
+                right: 0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      width: 200,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: whiteColor,
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.bookmark_border,
+                            color: lightGreyColor,
+                          ),
+                          gapW8,
+                          Text(
+                            'Simpan ke Baca Nanti',
+                            style: blackTextStyle.copyWith(
+                              fontSize: 10,
+                              fontWeight: medium,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    gapH16,
+                    const Text(
+                      'Simpan dan',
+                      style: TextStyle(fontSize: 14, color: Colors.white),
+                    ),
+                    gapH4,
+                    Text(
+                      'Baca Nanti',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: semiBold,
+                        color: Colors.deepOrange,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class OnboardingSliderFourth extends StatelessWidget {
+  const OnboardingSliderFourth({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Positioned(
+          left: 0,
+          bottom: 0,
+          right: 0,
+          top: 0,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                bottom: 0,
+                right: 0,
+                top: 50,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 94,
+                    ),
+                    Text(
+                      'Untuk mendapatkan berita\nyang kamu suka',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    gapH16,
+                    RichText(
+                      text: TextSpan(
+                        text: 'Notifikasi ',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.deepOrange,
+                          fontWeight: semiBold,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Berita',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: semiBold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Image.asset(
+                      'assets/img_slider_three.png',
+                      width: 281,
+                      height: 588,
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                child: Column(
+                  children: [
+                    const Expanded(flex: 82, child: SizedBox()),
+                    Expanded(
+                      flex: 18,
+                      child: Container(
+                        color: whiteColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

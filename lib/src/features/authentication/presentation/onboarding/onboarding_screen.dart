@@ -4,6 +4,7 @@ import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart'
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_slider.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -38,20 +39,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const OnboardingSliderFirst(),
               // item 2
               const OnboardingSliderSecond(),
-              Opacity(
-                opacity: 0.3,
-                child: Image.asset(
-                  'assets/img_slider_two.png',
-                  height: 331,
-                ),
-              ),
-              Opacity(
-                opacity: 1,
-                child: Image.asset(
-                  'assets/img_slider_three.png',
-                  height: 331,
-                ),
-              ),
+              const OnboardingSliderThird(),
+              const OnboardingSliderFourth(),
             ],
             carouselController: carouselController,
             options: CarouselOptions(
@@ -65,80 +54,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
             ),
           ),
-          currentIndex == 0
-              ?
-              // Item 1
-              SizedBox()
-              : currentIndex == 1
-                  ?
-                  // item 2
-                  SizedBox()
-                  : currentIndex == 2
-                      ?
-                      // item 3
-                      Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'Simpan dan',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.white),
-                              ),
-                              gapH16,
-                              Text(
-                                'Baca Nanti',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: semiBold,
-                                  color: Colors.deepOrange,
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      :
-                      // item 4
-                      Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                height: 94,
-                              ),
-                              const Text(
-                                'Untuk mendapatkan berita\nyang kamu suka',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                ),
-                              ),
-                              gapH16,
-                              RichText(
-                                text: TextSpan(
-                                  text: 'Notifikasi ',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.deepOrange,
-                                    fontWeight: semiBold,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: 'Berita',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: semiBold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
@@ -153,7 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   text: currentIndex == 0 ? 'Ayo Mulai' : 'Lanjutkan',
                   onPressed: () {
                     currentIndex == 3
-                        ? GoRouter.of(context).go('/sign-in')
+                        ? context.pushNamed(AppRoute.signIn.name)
                         : carouselController.nextPage();
                   },
                 ),
