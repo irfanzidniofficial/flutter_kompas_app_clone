@@ -23,7 +23,8 @@ class NewsCard extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 15),
+          margin: EdgeInsets.only(top: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
               Row(
@@ -36,7 +37,7 @@ class NewsCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          category,
+                          'Bola',
                           style: orangeTextStyle,
                         ),
                         gapH4,

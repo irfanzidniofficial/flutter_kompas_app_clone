@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_slider.dart';
 import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -16,19 +17,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int? currentIndex = 0;
   CarouselController carouselController = CarouselController();
 
-  List<String> titles = [
-    'Selamat Datang',
-    'Atur Minat',
-    'Baca Nanti',
-    'Notifikasi Berita'
-  ];
-
-  List<String> subtitles = [
-    'Dapatkan berita terupdate, jernih, akurat\ndan terpercaya hanya di Kompas.com',
-    'Untuk mendapatkan berita\nyang kamu suka',
-    'Simpan dan',
-    'Update cepet dengan'
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,139 +32,47 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
-          Column(
-            children: [
-              Expanded(
-                flex: 82,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(
-                        currentIndex == 0 || currentIndex == 3 ? 0 : 0.7),
-                  ),
-                  child: CarouselSlider(
-                    items: [
-                      Opacity(
-                        opacity: 0,
-                        child: Image.asset(
-                          'assets/img_slider_one.png',
-                          height: 331,
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.3,
-                        child: Image.asset(
-                          'assets/img_slider_one.png',
-                          height: 331,
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.3,
-                        child: Image.asset(
-                          'assets/img_slider_two.png',
-                          height: 331,
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 1,
-                        child: Image.asset(
-                          'assets/img_slider_three.png',
-                          height: 331,
-                        ),
-                      ),
-                    ],
-                    carouselController: carouselController,
-                    options: CarouselOptions(
-                      viewportFraction: 4,
-                      height: double.infinity,
-                      enableInfiniteScroll: false,
-                      onPageChanged: (index, reason) => {
-                        setState(() {
-                          currentIndex = index;
-                        })
-                      },
-                    ),
-                  ),
+          CarouselSlider(
+            items: [
+              // item 1
+              const OnboardingSliderFirst(),
+              // item 2
+              const OnboardingSliderSecond(),
+              Opacity(
+                opacity: 0.3,
+                child: Image.asset(
+                  'assets/img_slider_two.png',
+                  height: 331,
                 ),
               ),
-              Expanded(
-                flex: 18,
-                child: Container(),
-              )
+              Opacity(
+                opacity: 1,
+                child: Image.asset(
+                  'assets/img_slider_three.png',
+                  height: 331,
+                ),
+              ),
             ],
+            carouselController: carouselController,
+            options: CarouselOptions(
+              viewportFraction: 4,
+              height: double.infinity,
+              enableInfiniteScroll: false,
+              onPageChanged: (index, reason) => {
+                setState(() {
+                  currentIndex = index;
+                })
+              },
+            ),
           ),
           currentIndex == 0
               ?
               // Item 1
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 58,
-                        height: 58,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/ic_kompas.png'))),
-                      ),
-                      gapH16,
-                      Text(
-                        titles[currentIndex = 0],
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: semiBold,
-                        ),
-                      ),
-                      gapH16,
-                      Text(
-                        subtitles[currentIndex = 0],
-                        style: const TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
+              SizedBox()
               : currentIndex == 1
                   ?
                   // item 2
-                  Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              text: 'Atur ',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: semiBold,
-                              ),
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'Minat',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.deepOrange,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          gapH16,
-                          Text(
-                            subtitles[currentIndex = 1],
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                  SizedBox()
                   : currentIndex == 2
                       ?
                       // item 3

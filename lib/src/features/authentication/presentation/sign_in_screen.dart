@@ -88,9 +88,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   fontWeight: medium,
                 ),
                 onPressed: () {
-                  GoRouter.of(context).go('/main');
+                  context.pushReplacement('/search');
                 },
-              ),
+              )
             ],
           ),
         ],
