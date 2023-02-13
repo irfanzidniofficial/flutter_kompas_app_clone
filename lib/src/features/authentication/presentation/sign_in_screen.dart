@@ -100,7 +100,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   fontWeight: medium,
                 ),
                 onPressed: () {
+
                   context.pushNamed(AppRoute.home.name);
+
+             
+
                 },
               )
             ],

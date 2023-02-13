@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
+import 'package:flutter_kompas_app_clone/src/common_widgets/menu_category_card_widget.dart';
+import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
+
 import 'package:go_router/go_router.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -31,6 +34,12 @@ class MenuScreen extends StatelessWidget {
               size: 30.0,
             ),
           ),
+        ],
+      ),
+      body: ListView(
+        children: const [
+          gapH24,
+          MenuCategoryCardWidget(),
         ],
       ),
     );
