@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_slider.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -33,25 +33,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           CarouselSlider(
-            items: [
+            items: const [
               // item 1
-              const OnboardingSliderFirst(),
+              OnboardingSliderFirst(),
               // item 2
-              const OnboardingSliderSecond(),
-              Opacity(
-                opacity: 0.3,
-                child: Image.asset(
-                  'assets/img_slider_two.png',
-                  height: 331,
-                ),
-              ),
-              Opacity(
-                opacity: 1,
-                child: Image.asset(
-                  'assets/img_slider_three.png',
-                  height: 331,
-                ),
-              ),
+              OnboardingSliderSecond(),
+              // item 3
+              OnboardingSliderThird(),
+              // item 4
+              OnboardingSliderFourth(),
             ],
             carouselController: carouselController,
             options: CarouselOptions(
@@ -65,6 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
             ),
           ),
+
           currentIndex == 0
               ?
               // Item 1
@@ -139,6 +130,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ],
                           ),
                         ),
+
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
@@ -153,7 +145,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   text: currentIndex == 0 ? 'Ayo Mulai' : 'Lanjutkan',
                   onPressed: () {
                     currentIndex == 3
-                        ? GoRouter.of(context).go('/sign-in')
+                        ? context.pushNamed(AppRoute.signIn.name)
                         : carouselController.nextPage();
                   },
                 ),

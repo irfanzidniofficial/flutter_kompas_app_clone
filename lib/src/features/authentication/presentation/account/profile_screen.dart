@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
-import 'package:flutter_kompas_app_clone/src/common_widgets/image_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/item_edit_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -27,8 +27,16 @@ class ProfileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   gapH32,
-                  const ImageProfileWidget(
-                    sizedImage: 85,
+                  CircleAvatar(
+                    backgroundColor: purpleColor,
+                    radius: 88 / 2,
+                    child: Text(
+                      'I',
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 41,
+                        fontWeight: semiBold,
+                      ),
+                    ),
                   ),
                   gapH24,
                   Text(
@@ -68,9 +76,8 @@ class ProfileScreen extends StatelessWidget {
                 text: 'Ubah Profil',
                 style: blueTextStyle.copyWith(
                   fontSize: 16,
-                  decoration: TextDecoration.underline,
                 ),
-                onPressed: () => context.go('/edit-profile'),
+                onPressed: () => context.pushNamed(AppRoute.editProfile.name),
               ),
             ),
             gapH20,

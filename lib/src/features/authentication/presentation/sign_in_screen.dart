@@ -4,6 +4,7 @@ import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.d
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -26,14 +27,25 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
         children: [
           gapH64,
-          Text(
-            'Akses Fitur Lengkap',
-            style: blackTextStyle.copyWith(
-              fontSize: 24.0,
-              fontWeight: bold,
-            ),
-            textAlign: TextAlign.center,
-          ),
+          RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                  text: 'Akses ',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 24.0,
+                    fontWeight: bold,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Fitur Lengkap',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 24.0,
+                        color: whiteColor,
+                        backgroundColor: orangeColor,
+                        fontWeight: bold,
+                      ),
+                    )
+                  ])),
           Text(
             'dengan akunmu',
             style: blackTextStyle.copyWith(
@@ -65,7 +77,7 @@ class _SignInScreenState extends State<SignInScreen> {
               CustomTextButton(
                 text: 'Tidak punya KG Media ID?',
                 onPressed: () {
-                  GoRouter.of(context).go('/sign-up');
+                  context.pushNamed(AppRoute.signUp.name);
                 },
                 style: blueTextStyle.copyWith(
                   fontSize: 16,
@@ -88,7 +100,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   fontWeight: medium,
                 ),
                 onPressed: () {
-                  context.pushReplacement('/main');
+
+                  context.pushNamed(AppRoute.home.name);
+
+             
+
                 },
               )
             ],
