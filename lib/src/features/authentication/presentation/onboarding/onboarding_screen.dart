@@ -68,11 +68,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           currentIndex == 0
               ?
               // Item 1
-              SizedBox()
+              const SizedBox()
               : currentIndex == 1
                   ?
                   // item 2
-                  SizedBox()
+                  const SizedBox()
                   : currentIndex == 2
                       ?
                       // item 3
