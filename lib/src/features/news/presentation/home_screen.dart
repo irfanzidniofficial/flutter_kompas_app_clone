@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                 'Hasil Indonesia Masters 2023: Selamat Datang Kembali,Praveen/Melati!',
             image: 'assets/img_news_one.png',
             onTap: () {
-              GoRouter.of(context).go('/detail-news');
+              context.pushNamed(AppRoute.detailNews.name);
             },
             onPressedMore: () {},
           ),

@@ -218,7 +218,7 @@ class OnboardingSliderThird extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       width: 200,
                       height: 50,
                       decoration: BoxDecoration(

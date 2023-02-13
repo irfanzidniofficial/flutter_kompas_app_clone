@@ -1,22 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
+import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:go_router/go_router.dart';
+
+import '../routing/app_router.dart';
 
 class MenuCategoryCardWidget extends StatelessWidget {
   const MenuCategoryCardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 165.0,
-      height: 162,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            'assets/img_category_one.png',
+    return GestureDetector(
+      onTap: () {
+        context.pushNamed(AppRoute.detailMenu.name);
+      },
+      child: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child: SizedBox(
+              child: Image.asset(
+                'assets/img_category_one.png',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        ),
-      ),
-      child: Column(
-        children: const [Text('Data')],
+          Positioned(
+            bottom: 8.0,
+            left: 7.0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Tren',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semiBold,
+                  ),
+                ),
+                gapH4,
+                Text(
+                  'Berita Terpopuler',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

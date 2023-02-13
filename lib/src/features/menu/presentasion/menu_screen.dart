@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/menu_category_card_widget.dart';
+import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 
 import 'package:go_router/go_router.dart';
@@ -37,9 +37,22 @@ class MenuScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        children: const [
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        children: [
           gapH24,
-          MenuCategoryCardWidget(),
+          Wrap(
+            spacing: 10,
+            alignment: WrapAlignment.center,
+            runSpacing: 10,
+            children: const [
+              MenuCategoryCardWidget(),
+              MenuCategoryCardWidget(),
+              MenuCategoryCardWidget(),
+              MenuCategoryCardWidget(),
+            ],
+          )
         ],
       ),
     );

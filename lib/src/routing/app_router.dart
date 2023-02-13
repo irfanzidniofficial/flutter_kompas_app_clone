@@ -20,6 +20,8 @@ enum AppRoute {
   onboarding,
   profile,
   editProfile,
+  detailNews,
+  detailMenu,
   setting,
   search,
 }
@@ -60,6 +62,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'detail-menu',
+          name: AppRoute.detailMenu.name,
           builder: (context, state) => const DetailMenuScreen(),
         ),
         GoRoute(
@@ -77,6 +80,7 @@ final goRouter = GoRouter(
         ),
         GoRoute(
           path: 'detail-news',
+          name: AppRoute.detailNews.name,
           builder: (context, state) => const DetailNewsScreen(),
         ),
         GoRoute(
