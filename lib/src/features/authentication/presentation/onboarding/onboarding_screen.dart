@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_slider.dart';
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
@@ -34,13 +33,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           CarouselSlider(
-            items: [
+            items: const [
               // item 1
-              const OnboardingSliderFirst(),
+              OnboardingSliderFirst(),
               // item 2
-              const OnboardingSliderSecond(),
-              const OnboardingSliderThird(),
-              const OnboardingSliderFourth(),
+              OnboardingSliderSecond(),
+              // item 3
+              OnboardingSliderThird(),
+              // item 4
+              OnboardingSliderFourth(),
             ],
             carouselController: carouselController,
             options: CarouselOptions(

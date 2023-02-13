@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
-import 'package:flutter_kompas_app_clone/src/common_widgets/image_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/item_edit_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';

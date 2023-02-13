@@ -21,25 +21,14 @@ class SearchScreen extends StatelessWidget {
             color: lightGreyColor,
             width: double.infinity,
             padding: const EdgeInsets.all(20),
-            child: ValueListenableBuilder<TextEditingValue>(
-                valueListenable: _controller,
-                builder: (context, value, _) {
-                  return TextField(
-                      autofocus: false,
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.search),
-                        hintText: 'Masukan kata kunci pencarian',
-                        suffixIcon: value.text.isNotEmpty
-                            ? IconButton(
-                                onPressed: () {
-                                  _controller.clear();
-                                },
-                                icon: Icon(Icons.clear),
-                              )
-                            : null,
-                      ),
-                      onChanged: (text) {});
-                }),
+            child: TextField(
+                autofocus: false,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.search),
+                  hintText: 'Masukan kata kunci pencarian',
+                  suffixIcon: Icon(Icons.clear),
+                ),
+                onChanged: (text) {}),
           )
         ],
       ),
