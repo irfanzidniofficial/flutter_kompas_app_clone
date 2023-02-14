@@ -32,6 +32,7 @@ class OnboardingSliderFirst extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        gapH64,
         Container(
           width: 58,
           height: 58,
