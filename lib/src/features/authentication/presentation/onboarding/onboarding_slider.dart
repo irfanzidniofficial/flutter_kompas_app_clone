@@ -70,90 +70,83 @@ class OnboardingSliderSecond extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Layer first (image phone)
         Positioned(
           left: 0,
           bottom: 0,
           right: 0,
-          top: 0,
-          child: Stack(
+          top: 50,
+          child: Column(
             children: [
-              Positioned(
-                left: 0,
-                bottom: 0,
-                right: 0,
-                top: 50,
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 82,
-                      child: Image.asset(
-                        image[1],
-                        width: 281,
-                        height: 588,
+              Expanded(
+                flex: 82,
+                child: Image.asset(
+                  image[1],
+                  width: 281,
+                  height: 588,
+                ),
+              ),
+              Expanded(
+                flex: 18,
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
+        // Layer first (image phone)
+
+        Positioned(
+          child: Column(
+            children: [
+              Expanded(
+                flex: 82,
+                child: Container(
+                  color: Colors.black.withOpacity(0.7),
+                ),
+              ),
+              Expanded(
+                flex: 18,
+                child: Container(
+                  color: whiteColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          left: 0,
+          top: 150,
+          bottom: 0,
+          right: 0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              RichText(
+                text: TextSpan(
+                  text: titles[1][0],
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: semiBold,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: titles[1][1],
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepOrange,
+                        fontWeight: semiBold,
                       ),
-                    ),
-                    Expanded(
-                      flex: 18,
-                      child: Container(),
                     ),
                   ],
                 ),
               ),
-              Positioned(
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 82,
-                      child: Container(
-                        color: Colors.black.withOpacity(0.7),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 18,
-                      child: Container(
-                        color: whiteColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                left: 0,
-                top: 150,
-                bottom: 0,
-                right: 0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        text: titles[1][0],
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: semiBold,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: titles[1][1],
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.deepOrange,
-                              fontWeight: semiBold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    gapH16,
-                    Text(
-                      subtitles[1],
-                      textAlign: TextAlign.center,
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
+              gapH16,
+              Text(
+                subtitles[1],
+                textAlign: TextAlign.center,
+                style: whiteTextStyle.copyWith(
+                  fontSize: 12,
                 ),
               ),
             ],
@@ -175,97 +168,87 @@ class OnboardingSliderThird extends StatelessWidget {
           left: 0,
           bottom: 0,
           right: 0,
-          top: 0,
-          child: Stack(
+          top: 50,
+          child: Column(
             children: [
-              Positioned(
-                left: 0,
-                bottom: 0,
-                right: 0,
-                top: 50,
-                child: Column(
+              Expanded(
+                flex: 82,
+                child: Image.asset(
+                  image[3],
+                  width: 281,
+                  height: 588,
+                ),
+              ),
+              Expanded(
+                flex: 18,
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          child: Column(
+            children: [
+              Expanded(
+                flex: 82,
+                child: Container(
+                  color: Colors.black.withOpacity(0.7),
+                ),
+              ),
+              Expanded(
+                flex: 18,
+                child: Container(
+                  color: whiteColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          left: 0,
+          top: 150,
+          bottom: 0,
+          right: 0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                width: 200,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: whiteColor,
+                ),
+                child: Row(
                   children: [
-                    Expanded(
-                      flex: 82,
-                      child: Image.asset(
-                        image[3],
-                        width: 281,
-                        height: 588,
+                    Icon(
+                      Icons.bookmark_border,
+                      color: lightGreyColor,
+                    ),
+                    gapW8,
+                    Text(
+                      'Simpan ke Baca Nanti',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 10,
+                        fontWeight: medium,
                       ),
-                    ),
-                    Expanded(
-                      flex: 18,
-                      child: Container(),
-                    ),
+                    )
                   ],
                 ),
               ),
-              Positioned(
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 82,
-                      child: Container(
-                        color: Colors.black.withOpacity(0.7),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 18,
-                      child: Container(
-                        color: whiteColor,
-                      ),
-                    ),
-                  ],
-                ),
+              gapH16,
+              Text(
+                subtitles[2],
+                style: whiteTextStyle,
               ),
-              Positioned(
-                left: 0,
-                top: 150,
-                bottom: 0,
-                right: 0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      width: 200,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: whiteColor,
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.bookmark_border,
-                            color: lightGreyColor,
-                          ),
-                          gapW8,
-                          Text(
-                            'Simpan ke Baca Nanti',
-                            style: blackTextStyle.copyWith(
-                              fontSize: 10,
-                              fontWeight: medium,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    gapH16,
-                    Text(
-                      subtitles[2],
-                      style: whiteTextStyle,
-                    ),
-                    gapH4,
-                    Text(
-                      titles[2],
-                      style: orangeTextStyle.copyWith(
-                        fontSize: 20,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ],
+              gapH4,
+              Text(
+                titles[2],
+                style: orangeTextStyle.copyWith(
+                  fontSize: 20,
+                  fontWeight: semiBold,
                 ),
               ),
             ],
@@ -287,67 +270,54 @@ class OnboardingSliderFourth extends StatelessWidget {
           left: 0,
           bottom: 0,
           right: 0,
-          top: 0,
-          child: Stack(
+          top: 130,
+          child: Column(
             children: [
-              Positioned(
-                left: 0,
-                bottom: 0,
-                right: 0,
-                top: 50,
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 94,
-                    ),
-                    Text(
-                      subtitles[3],
-                      textAlign: TextAlign.center,
+              Text(
+                subtitles[3],
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: semiBold,
+                ),
+              ),
+              gapH16,
+              RichText(
+                text: TextSpan(
+                  text: 'Notifikasi ',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.deepOrange,
+                    fontWeight: semiBold,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Berita',
                       style: TextStyle(
-                        fontSize: 14,
+                        color: Colors.black,
+                        fontSize: 20,
                         fontWeight: semiBold,
                       ),
-                    ),
-                    gapH16,
-                    RichText(
-                      text: TextSpan(
-                        text: 'Notifikasi ',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.deepOrange,
-                          fontWeight: semiBold,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Berita',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: semiBold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Image.asset(
-                      image[3],
-                      width: 281,
-                      height: 588,
                     ),
                   ],
                 ),
               ),
-              Positioned(
-                child: Column(
-                  children: [
-                    const Expanded(flex: 82, child: SizedBox()),
-                    Expanded(
-                      flex: 18,
-                      child: Container(
-                        color: whiteColor,
-                      ),
-                    ),
-                  ],
+              Image.asset(
+                image[3],
+                width: 281,
+                height: 588,
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          child: Column(
+            children: [
+              const Expanded(flex: 82, child: SizedBox()),
+              Expanded(
+                flex: 18,
+                child: Container(
+                  color: whiteColor,
                 ),
               ),
             ],
