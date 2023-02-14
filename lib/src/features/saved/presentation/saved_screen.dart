@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/news_card.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
+import 'package:flutter_kompas_app_clone/src/shared/custom_alert_dialog.dart';
 
 class SavedScreen extends StatelessWidget {
   const SavedScreen({super.key});
@@ -14,11 +15,19 @@ class SavedScreen extends StatelessWidget {
           'Baca Nanti',
         ),
         centerTitle: true,
-        actions: const [
-          Icon(
-            Icons.delete_sweep,
-            size: 30.0,
-          )
+        actions: [
+          IconButton(
+            onPressed: () {
+              showCustomAlertDialog(
+                context,
+                'Yakin ingin hapus semua',
+              );
+            },
+            icon: const Icon(
+              Icons.delete_sweep,
+              size: 30.0,
+            ),
+          ),
         ],
       ),
       body: ListView(
