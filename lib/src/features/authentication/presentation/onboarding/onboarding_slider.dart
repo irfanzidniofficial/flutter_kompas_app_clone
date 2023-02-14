@@ -2,19 +2,66 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 
-List<String> titles = [
+List<dynamic> titles = [
   'Selamat Datang',
-  'Atur Minat',
+  ['Atur', ' Minat'],
   'Baca Nanti',
-  'Notifikasi Berita'
+  ['Notifikasi', ' Berita'],
 ];
 
-List<String> subtitles = [
+List<dynamic> subtitles = [
   'Dapatkan berita terupdate, jernih, akurat\ndan terpercaya hanya di Kompas.com',
   'Untuk mendapatkan berita\nyang kamu suka',
   'Simpan dan',
   'Update cepet dengan'
 ];
+
+List<dynamic> image = [
+  'assets/ic_kompas.png',
+  'assets/img_slider_one.png',
+  'assets/img_slider_two.png',
+  'assets/img_slider_three.png',
+];
+
+class OnboardingSliderFirst extends StatelessWidget {
+  const OnboardingSliderFirst({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 58,
+          height: 58,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                image[0],
+              ),
+            ),
+          ),
+        ),
+        gapH16,
+        Text(
+          titles[0],
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: semiBold,
+          ),
+        ),
+        gapH16,
+        Text(
+          subtitles[0],
+          style: const TextStyle(
+            fontSize: 12,
+          ),
+        ),
+      ],
+    );
+  }
+}
 
 class OnboardingSliderSecond extends StatelessWidget {
   const OnboardingSliderSecond({super.key});
@@ -40,7 +87,7 @@ class OnboardingSliderSecond extends StatelessWidget {
                     Expanded(
                       flex: 82,
                       child: Image.asset(
-                        'assets/img_slider_one.png',
+                        image[1],
                         width: 281,
                         height: 588,
                       ),
@@ -81,14 +128,14 @@ class OnboardingSliderSecond extends StatelessWidget {
                   children: [
                     RichText(
                       text: TextSpan(
-                        text: 'Atur ',
+                        text: titles[1][0],
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: semiBold,
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                            text: 'Minat',
+                            text: titles[1][1],
                             style: TextStyle(
                               fontSize: 20,
                               color: Colors.deepOrange,
@@ -99,54 +146,17 @@ class OnboardingSliderSecond extends StatelessWidget {
                       ),
                     ),
                     gapH16,
-                    const Text(
-                      'Untuk mendapatkan berita\nyang kamu suka',
+                    Text(
+                      subtitles[1],
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: whiteTextStyle.copyWith(
                         fontSize: 12,
-                        color: Colors.white,
                       ),
                     ),
                   ],
                 ),
               ),
             ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class OnboardingSliderFirst extends StatelessWidget {
-  const OnboardingSliderFirst({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: 58,
-          height: 58,
-          decoration: const BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage('assets/ic_kompas.png'))),
-        ),
-        gapH16,
-        Text(
-          titles[0],
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: semiBold,
-          ),
-        ),
-        gapH16,
-        Text(
-          subtitles[0],
-          style: const TextStyle(
-            fontSize: 12,
           ),
         ),
       ],
@@ -178,7 +188,7 @@ class OnboardingSliderThird extends StatelessWidget {
                     Expanded(
                       flex: 82,
                       child: Image.asset(
-                        'assets/img_slider_two.png',
+                        image[3],
                         width: 281,
                         height: 588,
                       ),
@@ -218,7 +228,7 @@ class OnboardingSliderThird extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       width: 200,
                       height: 50,
                       decoration: BoxDecoration(
@@ -243,17 +253,16 @@ class OnboardingSliderThird extends StatelessWidget {
                       ),
                     ),
                     gapH16,
-                    const Text(
-                      'Simpan dan',
-                      style: TextStyle(fontSize: 14, color: Colors.white),
+                    Text(
+                      subtitles[2],
+                      style: whiteTextStyle,
                     ),
                     gapH4,
                     Text(
-                      'Baca Nanti',
-                      style: TextStyle(
+                      titles[2],
+                      style: orangeTextStyle.copyWith(
                         fontSize: 20,
                         fontWeight: semiBold,
-                        color: Colors.deepOrange,
                       ),
                     ),
                   ],
@@ -292,7 +301,7 @@ class OnboardingSliderFourth extends StatelessWidget {
                       height: 94,
                     ),
                     Text(
-                      'Untuk mendapatkan berita\nyang kamu suka',
+                      subtitles[3],
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14,
@@ -321,7 +330,7 @@ class OnboardingSliderFourth extends StatelessWidget {
                       ),
                     ),
                     Image.asset(
-                      'assets/img_slider_three.png',
+                      image[3],
                       width: 281,
                       height: 588,
                     ),
