@@ -17,7 +17,7 @@ List<dynamic> subtitles = [
 ];
 
 List<dynamic> image = [
-  'assets/ic_kompas.png',
+  'assets/ic_kompas.png', 
   'assets/img_slider_one.png',
   'assets/img_slider_two.png',
   'assets/img_slider_three.png',
@@ -32,6 +32,7 @@ class OnboardingSliderFirst extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        gapH64,
         Container(
           width: 58,
           height: 58,
