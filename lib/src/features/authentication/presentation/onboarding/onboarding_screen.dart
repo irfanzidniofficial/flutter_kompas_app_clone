@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
+import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_slider.dart';
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
@@ -55,7 +56,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
             ),
           ),
-
           currentIndex == 0
               ?
               // Item 1
@@ -130,7 +130,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ],
                           ),
                         ),
-
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
