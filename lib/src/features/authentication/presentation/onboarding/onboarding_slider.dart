@@ -72,50 +72,26 @@ class OnboardingSliderSecond extends StatelessWidget {
       children: [
         // Layer first (image phone)
         Positioned(
-          left: 0,
+          top: 50,
           bottom: 0,
           right: 0,
-          top: 50,
-          child: Column(
-            children: [
-              Expanded(
-                flex: 82,
-                child: Image.asset(
-                  image[1],
-                  width: 281,
-                  height: 588,
-                ),
-              ),
-              Expanded(
-                flex: 18,
-                child: Container(),
-              ),
-            ],
+          left: 0,
+          child: Image.asset(
+            image[1],
+            height: double.infinity,
           ),
         ),
         // Layer first (image phone)
 
         Positioned(
-          child: Column(
-            children: [
-              Expanded(
-                flex: 82,
-                child: Container(
-                  color: Colors.black.withOpacity(0.7),
-                ),
-              ),
-              Expanded(
-                flex: 18,
-                child: Container(
-                  color: whiteColor,
-                ),
-              ),
-            ],
+          child: Container(
+            height: double.infinity,
+            color: Colors.black.withOpacity(0.7),
           ),
         ),
         Positioned(
           left: 0,
-          top: 150,
+          top: MediaQuery.of(context).size.height * 0.4,
           bottom: 0,
           right: 0,
           child: Column(
@@ -169,44 +145,19 @@ class OnboardingSliderThird extends StatelessWidget {
           bottom: 0,
           right: 0,
           top: 50,
-          child: Column(
-            children: [
-              Expanded(
-                flex: 82,
-                child: Image.asset(
-                  image[3],
-                  width: 281,
-                  height: 588,
-                ),
-              ),
-              Expanded(
-                flex: 18,
-                child: Container(),
-              ),
-            ],
+          child: Image.asset(
+            image[2],
+            height: double.infinity,
           ),
         ),
         Positioned(
-          child: Column(
-            children: [
-              Expanded(
-                flex: 82,
-                child: Container(
-                  color: Colors.black.withOpacity(0.7),
-                ),
-              ),
-              Expanded(
-                flex: 18,
-                child: Container(
-                  color: whiteColor,
-                ),
-              ),
-            ],
+          child: Container(
+            color: Colors.black.withOpacity(0.7),
           ),
         ),
         Positioned(
           left: 0,
-          top: 150,
+          top: MediaQuery.of(context).size.height * 0.4,
           bottom: 0,
           right: 0,
           child: Column(
@@ -270,9 +221,11 @@ class OnboardingSliderFourth extends StatelessWidget {
           left: 0,
           bottom: 0,
           right: 0,
-          top: 130,
+          top: MediaQuery.of(context).size.height * 0.15,
           child: Column(
             children: [
+              const SizedBox(),
+              const Spacer(),
               Text(
                 subtitles[3],
                 textAlign: TextAlign.center,
@@ -304,8 +257,7 @@ class OnboardingSliderFourth extends StatelessWidget {
               ),
               Image.asset(
                 image[3],
-                width: 281,
-                height: 588,
+                height: 444,
               ),
             ],
           ),
@@ -313,9 +265,9 @@ class OnboardingSliderFourth extends StatelessWidget {
         Positioned(
           child: Column(
             children: [
-              const Expanded(flex: 82, child: SizedBox()),
+              const Expanded(flex: 100, child: SizedBox()),
               Expanded(
-                flex: 18,
+                flex: 0,
                 child: Container(
                   color: whiteColor,
                 ),
