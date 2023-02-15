@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
 
 List<dynamic> titles = [
   'Selamat Datang',
@@ -17,7 +17,7 @@ List<dynamic> subtitles = [
 ];
 
 List<dynamic> image = [
-  'assets/ic_kompas.png', 
+  'assets/ic_kompas.png',
   'assets/img_slider_one.png',
   'assets/img_slider_two.png',
   'assets/img_slider_three.png',
@@ -222,10 +222,9 @@ class OnboardingSliderFourth extends StatelessWidget {
           left: 0,
           bottom: 0,
           right: 0,
-          top: MediaQuery.of(context).size.height * 0.15,
+          top: MediaQuery.of(context).size.height * 0.01,
           child: Column(
             children: [
-              const SizedBox(),
               const Spacer(),
               Text(
                 subtitles[3],

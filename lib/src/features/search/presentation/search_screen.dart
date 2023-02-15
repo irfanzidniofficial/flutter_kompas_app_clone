@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});

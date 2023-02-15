@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_form_field_widget.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
 
 import 'package:flutter_kompas_app_clone/src/features/news/presentation/home_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/saved/presentation/saved_screen.dart';

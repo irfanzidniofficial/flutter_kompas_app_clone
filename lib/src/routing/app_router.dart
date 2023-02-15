@@ -1,6 +1,5 @@
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/account/edit_profile_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/account/profile_screen.dart';
-import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/account/setting_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signIn/sign_in_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signUp/sign_up_scren.dart';
@@ -54,11 +53,6 @@ final goRouter = GoRouter(
           path: 'edit-profile',
           name: AppRoute.editProfile.name,
           builder: (context, state) => const EditProfileScreen(),
-        ),
-        GoRoute(
-          name: AppRoute.setting.name,
-          path: 'setting',
-          builder: (context, state) => const SettingScreen(),
         ),
         GoRoute(
           path: 'detail-menu',
