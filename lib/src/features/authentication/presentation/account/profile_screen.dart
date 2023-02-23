@@ -87,31 +87,6 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
             ),
             const ItemEditProfileWidget(
-              subtitles: 'Pilih Gender',
-              title: 'Gender',
-            ),
-            Divider(
-              color: lightGreyColor,
-              thickness: 1,
-            ),
-            const ItemEditProfileWidget(
-              subtitles: 'Tanggal Lahir',
-              title: 'Pilih Tanggal Lahir',
-            ),
-            Divider(
-              color: lightGreyColor,
-              thickness: 1,
-            ),
-            const ItemEditProfileWidget(
-              subtitles: 'Status Pernikahan',
-              title: 'Status Pernikahan',
-            ),
-            Container(
-              width: double.infinity,
-              height: 17,
-              color: lightGreyColor,
-            ),
-            const ItemEditProfileWidget(
               subtitles: 'No Handphone',
               title: 'No Handphone',
             ),
@@ -120,17 +95,8 @@ class ProfileScreen extends StatelessWidget {
               thickness: 1,
             ),
             const ItemEditProfileWidget(
-              subtitles: 'Alamat Jalan',
+              subtitles: 'Alamat ',
               title: 'Alamat',
-            ),
-            Container(
-              width: double.infinity,
-              height: 17,
-              color: lightGreyColor,
-            ),
-            const ItemEditProfileWidget(
-              subtitles: 'Pendidikan Terakhir',
-              title: 'Pendidikan Terakhir',
             ),
             Divider(
               color: lightGreyColor,
@@ -138,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             const ItemEditProfileWidget(
               title: 'Pekerjaan',
-              subtitles: 'Pekerjaan Terakhir',
+              subtitles: 'Pekerjaan',
             ),
             Container(
               width: double.infinity,
@@ -149,7 +115,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               child: CustomTextButton(
                 text: 'Hapus Akun',
-                style: blueTextStyle.copyWith(
+                style: greyTitleTextStyle.copyWith(
                   fontSize: 16,
                 ),
               ),
@@ -174,34 +140,6 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
             ),
           ],
-
-          // gapH48,
-          // Container(
-          //   width: double.infinity,
-          //   height: 17,
-          //   color: lightGreyColor,
-          // ),
-          // gapH20,
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 30),
-          //   child: CustomTextButton(
-          //     text: 'Ubah Profil',
-          //     style: blueTextStyle.copyWith(
-          //       fontSize: 16,
-          //       decoration: TextDecoration.underline,
-          //     ),
-          //   ),
-          // ),
-          // gapH20,
-          // Container(
-          //   width: double.infinity,
-          //   height: 17,
-          //   color: lightGreyColor,
-          // ),
-          // const ItemEditProfileWidget(
-          //   subtitles: 'Pilih Gender',
-          //   title: 'Gender',
-          // ),
         ),
       ),
     );

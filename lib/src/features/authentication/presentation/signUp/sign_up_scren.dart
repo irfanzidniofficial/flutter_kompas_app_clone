@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_form_field_widget.dart';
+import 'package:flutter_kompas_app_clone/src/common_widgets/policy_widget.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/primary_button.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
@@ -68,16 +69,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           gapH64,
           PrimaryButton(
-            text: 'Lanjutkan',
+            text: 'Daftar',
             onPressed: () {},
           ),
           gapH24,
-          Text(
-            'Dengan menekan tombol “Lanjutkan”, kamu menyetujui\nbahwa data dan informasi KG Media ID milikmu akan\ndigunakan untuk memberikan layanan sesuai Kebijakan',
-            style: blackTextStyle.copyWith(
-              fontSize: 14,
-            ),
-          ),
+          const PolicyWidget(),
           gapH40,
         ],
       ),
