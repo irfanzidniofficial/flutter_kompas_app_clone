@@ -3,7 +3,7 @@ import 'package:flutter_kompas_app_clone/src/features/authentication/presentatio
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/account/setting_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signIn/sign_in_screen.dart';
-import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signUp/sign_up_scren.dart';
+import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signUp/sign_up_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/menu/presentasion/detail_menu_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/menu/presentasion/menu_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/news/presentation/detail_news_screen.dart';

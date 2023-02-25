@@ -6,3 +6,14 @@ abstract class AuthEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+
+class AuthRegister extends AuthEvent {
+
+  final SignUpFormModel data;
+  const AuthRegister(this.data);
+
+  @override
+  List<Object> get props => [data];
+  
+}
