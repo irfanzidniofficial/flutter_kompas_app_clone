@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kompas_app_clone/src/common_widgets/news_card.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/shared/custom_alert_dialog.dart';
 
@@ -36,31 +35,31 @@ class SavedScreen extends StatelessWidget {
         ),
         children: const [
           gapH24,
-          NewsCard(
-            image: 'assets/img_news_two.png',
-            title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-            category: 'Regional',
-          ),
-          NewsCard(
-            image: 'assets/img_news_two.png',
-            title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-            category: 'Regional',
-          ),
-          NewsCard(
-            image: 'assets/img_news_two.png',
-            title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-            category: 'Regional',
-          ),
-          NewsCard(
-            image: 'assets/img_news_two.png',
-            title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-            category: 'Regional',
-          ),
-          NewsCard(
-            image: 'assets/img_news_two.png',
-            title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-            category: 'Regional',
-          ),
+          // NewsCard(
+          //   image: 'assets/img_news_two.png',
+          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
+          //   category: 'Regional',
+          // ),
+          // NewsCard(
+          //   image: 'assets/img_news_two.png',
+          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
+          //   category: 'Regional',
+          // ),
+          // NewsCard(
+          //   image: 'assets/img_news_two.png',
+          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
+          //   category: 'Regional',
+          // ),
+          // NewsCard(
+          //   image: 'assets/img_news_two.png',
+          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
+          //   category: 'Regional',
+          // ),
+          // NewsCard(
+          //   image: 'assets/img_news_two.png',
+          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
+          //   category: 'Regional',
+          // ),
         ],
       ),
     );

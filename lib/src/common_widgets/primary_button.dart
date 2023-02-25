@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 
-import '../constants/app_sizes.dart';
-
 /// Primary button based on [ElevatedButton].
 /// Useful for CTAs in the app.
 /// @param text - text to display on the button.
@@ -18,7 +16,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Sizes.p48,
+      height: MediaQuery.of(context).size.height * 0.06,
       width: double.infinity,
       child: ElevatedButton(
         style: ButtonStyle(

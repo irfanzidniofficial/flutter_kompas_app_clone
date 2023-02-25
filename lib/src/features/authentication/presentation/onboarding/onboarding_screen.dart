@@ -62,11 +62,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
               Expanded(
                 flex: 18,
-                child: Container(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -80,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               : carouselController.nextPage();
                         },
                       ),
-                      gapH32,
+                      gapH16,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          gapW12,
                           Container(
                             height: currentIndex == 1 ? 13 : 9,
                             width: currentIndex == 1 ? 13 : 9,
@@ -106,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          gapW12,
                           Container(
                             height: currentIndex == 2 ? 13 : 9,
                             width: currentIndex == 2 ? 13 : 9,
@@ -117,7 +114,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          gapW12,
                           Container(
                             height: currentIndex == 3 ? 13 : 9,
                             width: currentIndex == 3 ? 13 : 9,

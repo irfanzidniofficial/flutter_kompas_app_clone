@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
+import 'package:flutter_kompas_app_clone/src/features/news/domain/news_model.dart';
+import 'package:flutter_kompas_app_clone/src/shared/shared_values.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard({
     super.key,
-    required this.image,
-    required this.title,
-    required this.category,
+    required this.news,
     this.onTap,
     this.onPressedMore,
   });
 
-  final String image;
-  final String title;
-  final String category;
+  final NewsModel news;
   final VoidCallback? onTap;
   final VoidCallback? onPressedMore;
 
@@ -37,19 +35,19 @@ class NewsCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Bola',
+                          news.category.toString(),
                           style: orangeTextStyle,
                         ),
                         gapH4,
                         Text(
-                          title,
+                          news.title.toString(),
                           style: blackTextStyle.copyWith(
                             fontSize: 16,
                             fontWeight: semiBold,
                           ),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -59,8 +57,8 @@ class NewsCard extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage(
-                            image,
+                          image: NetworkImage(
+                            '$baseUrl${news.newsImage}',
                           ),
                           fit: BoxFit.cover,
                         ),

@@ -82,7 +82,8 @@ class OnboardingSliderSecond extends StatelessWidget {
             height: double.infinity,
           ),
         ),
-        // Layer first (image phone)
+
+        // Layer second (black color opacity)
 
         Positioned(
           child: Container(
