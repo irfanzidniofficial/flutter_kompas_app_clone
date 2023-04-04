@@ -34,7 +34,7 @@ class CustomFormFieldWidget extends StatelessWidget {
             ),
             labelText: labelText,
           ),
-        )
+        ),
       ],
     );
   }

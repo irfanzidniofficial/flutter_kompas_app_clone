@@ -74,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           gapH24,
           const PolicyWidget(),
-          gapH40,
+          gapH64,
         ],
       ),
     );
