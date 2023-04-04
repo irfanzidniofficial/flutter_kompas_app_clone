@@ -1,13 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/item_edit_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
-import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
+
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
-import 'package:go_router/go_router.dart';
+
+import '../../../../shared/theme.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({
+    Key? key,
+    this.idUser,
+  }) : super(key: key);
+
+  final String? idUser;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +96,31 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
             ),
             const ItemEditProfileWidget(
+              subtitles: 'Pilih Gender',
+              title: 'Gender',
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            const ItemEditProfileWidget(
+              subtitles: 'Tanggal Lahir',
+              title: 'Pilih Tanggal Lahir',
+            ),
+            Divider(
+              color: lightGreyColor,
+              thickness: 1,
+            ),
+            const ItemEditProfileWidget(
+              subtitles: 'Status Pernikahan',
+              title: 'Status Pernikahan',
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            const ItemEditProfileWidget(
               subtitles: 'No Handphone',
               title: 'No Handphone',
             ),
@@ -95,8 +129,17 @@ class ProfileScreen extends StatelessWidget {
               thickness: 1,
             ),
             const ItemEditProfileWidget(
-              subtitles: 'Alamat ',
+              subtitles: 'Alamat Jalan',
               title: 'Alamat',
+            ),
+            Container(
+              width: double.infinity,
+              height: 17,
+              color: lightGreyColor,
+            ),
+            const ItemEditProfileWidget(
+              subtitles: 'Pendidikan Terakhir',
+              title: 'Pendidikan Terakhir',
             ),
             Divider(
               color: lightGreyColor,
@@ -104,7 +147,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             const ItemEditProfileWidget(
               title: 'Pekerjaan',
-              subtitles: 'Pekerjaan',
+              subtitles: 'Pekerjaan Terakhir',
             ),
             Container(
               width: double.infinity,
@@ -115,7 +158,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               child: CustomTextButton(
                 text: 'Hapus Akun',
-                style: greyTitleTextStyle.copyWith(
+                style: blueTextStyle.copyWith(
                   fontSize: 16,
                 ),
               ),
@@ -140,6 +183,34 @@ class ProfileScreen extends StatelessWidget {
               color: lightGreyColor,
             ),
           ],
+
+          // gapH48,
+          // Container(
+          //   width: double.infinity,
+          //   height: 17,
+          //   color: lightGreyColor,
+          // ),
+          // gapH20,
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 30),
+          //   child: CustomTextButton(
+          //     text: 'Ubah Profil',
+          //     style: blueTextStyle.copyWith(
+          //       fontSize: 16,
+          //       decoration: TextDecoration.underline,
+          //     ),
+          //   ),
+          // ),
+          // gapH20,
+          // Container(
+          //   width: double.infinity,
+          //   height: 17,
+          //   color: lightGreyColor,
+          // ),
+          // const ItemEditProfileWidget(
+          //   subtitles: 'Pilih Gender',
+          //   title: 'Gender',
+          // ),
         ),
       ),
     );

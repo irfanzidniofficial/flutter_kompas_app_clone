@@ -1,4 +1,6 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_kompas_app_clone/src/shared/theme.dart';
 
 void showCustomAlertDialog(BuildContext context, String message) {
   showDialog<String>(
@@ -19,4 +21,16 @@ void showCustomAlertDialog(BuildContext context, String message) {
           ],
         );
       });
+}
+
+void showCustomSnackBar(
+  BuildContext context,
+  String message,
+) {
+  Flushbar(
+    message: message,
+    flushbarPosition: FlushbarPosition.TOP,
+    backgroundColor: orangeColor,
+    duration: const Duration(seconds: 2),
+  ).show(context);
 }
