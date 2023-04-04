@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/data/bloc/auth_bloc.dart';
+import 'package:flutter_kompas_app_clone/src/features/menu/data/bloc/categories_list_bloc.dart';
+import 'package:flutter_kompas_app_clone/src/features/news/data/bloc/news_list_bloc.dart';
 
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
 
@@ -12,14 +14,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthBloc>(
-          create: (context) => AuthBloc(),
-        )
+          create: (context) => AuthBloc()..add(AuthGetCurrentUser()),
+        ),
+        BlocProvider<NewsListBloc>(
+          create: (context) => NewsListBloc()..add(GetNewsListEvent()),
+        ),
+        BlocProvider<CategoriesListBloc>(
+          create: (context) => CategoriesListBloc()..add(GetCategoriesListEvent()),
+        ),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

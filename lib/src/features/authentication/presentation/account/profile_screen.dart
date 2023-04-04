@@ -1,13 +1,20 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:flutter_kompas_app_clone/src/common_widgets/custom_text_button.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/item_edit_profile_widget.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
-import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({
+    Key? key,
+    this.idUser,
+  }) : super(key: key);
+
+  final String? idUser;
 
   @override
   Widget build(BuildContext context) {

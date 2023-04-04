@@ -4,12 +4,17 @@ import 'package:flutter_kompas_app_clone/src/common_widgets/heading_news_widget.
 import 'package:flutter_kompas_app_clone/src/common_widgets/news_card.dart';
 import 'package:flutter_kompas_app_clone/src/constants/app_sizes.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
-import 'package:flutter_kompas_app_clone/src/features/news/data/bloc/news_bloc.dart';
+import 'package:flutter_kompas_app_clone/src/features/authentication/data/bloc/auth_bloc.dart';
+import 'package:flutter_kompas_app_clone/src/features/news/data/bloc/news_list_bloc.dart';
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
+import 'package:flutter_kompas_app_clone/src/shared/custom_alert_dialog.dart';
+import 'package:flutter_kompas_app_clone/src/shared/enum_status.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +37,32 @@ class HomeScreen extends StatelessWidget {
               size: 30.0,
             ),
           ),
-          IconButton(
-            onPressed: () {
-              context.pushNamed(AppRoute.profile.name);
+          BlocBuilder<AuthBloc, AuthState>(
+            builder: (context, state) {
+              print(state);
+              if (state is AuthLoading) {
+                return const CircularProgressIndicator();
+              }
+              if (state is AuthSuccess) {
+                return IconButton(
+                  onPressed: () {
+                    context.pushNamed(
+                      AppRoute.profile.name,
+                      params: {
+                        'id': state.user.id.toString(),
+                      },
+                      extra: state.user,
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.account_circle,
+                    size: 30.0,
+                  ),
+                );
+              }
+
+              return const Icon(Icons.check);
             },
-            icon: const Icon(
-              Icons.account_circle,
-              size: 30.0,
-            ),
           ),
         ],
       ),
@@ -70,35 +93,36 @@ class HomeScreen extends StatelessWidget {
               gapH40,
             ],
           ),
-          BlocProvider(
-            create: (context) => NewsBloc()..add(NewsGet()),
-            child: BlocBuilder<NewsBloc, NewsState>(
-              builder: (context, state) {
-                print(state);
-                if (state is NewsLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-
-                if (state is NewsSuccess) {
-                  return Column(
-                    children: state.news.map((news) {
-                      return NewsCard(news: news);
-                    }).toList(),
-                  );
-                }
-                if (state is NewsFailed) {
-                  print('failed');
-                  return const Center(
-                    child: Text("Error Load Data"),
-                  );
-                }
+          BlocConsumer<NewsListBloc, NewsListState>(
+            listener: (context, state) {
+              if (state.status == Status.error) {
+                return showCustomSnackBar(context, state.errorMessage);
+              }
+            },
+            builder: (context, state) {
+              if (state.status == Status.loading) {
                 return const Center(
-                  child: Text('Try Again'),
+                  child: CircularProgressIndicator(),
                 );
-              },
-            ),
+              } else if (state.status == Status.error) {
+                return const Center(
+                  child: Text('Terjadi Kesalahan'),
+                );
+              } else if (state.status == Status.success) {
+                return Column(
+                  children: state.newsList.map(
+                    (news) {
+                      return NewsCard(
+                        news: news,
+                      );
+                    },
+                  ).toList(),
+                );
+              }
+              return const Center(
+                child: Text('Try Again'),
+              );
+            },
           ),
         ],
       ),

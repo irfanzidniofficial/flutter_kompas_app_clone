@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kompas_app_clone/src/common_widgets/menu_category_card_widget.dart';
-import 'package:flutter_kompas_app_clone/src/features/menu/data/bloc/categories_bloc.dart';
+import 'package:flutter_kompas_app_clone/src/features/menu/data/bloc/categories_list_bloc.dart';
 import 'package:flutter_kompas_app_clone/src/routing/app_router.dart';
+import 'package:flutter_kompas_app_clone/src/shared/custom_alert_dialog.dart';
+import 'package:flutter_kompas_app_clone/src/shared/enum_status.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -38,44 +40,44 @@ class MenuScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          BlocProvider(
-            create: (context) => CategoriesBloc()..add(CategoriesGet()),
-            child: BlocBuilder<CategoriesBloc, CategoriesState>(
-              builder: (context, state) {
-                print(state);
-                if (state is CategoriesLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-
-                if (state is CategoriesSuccess) {
-                  return Wrap(
-                    spacing: 10,
+          Wrap(
+            spacing: 15,
+            alignment: WrapAlignment.start,
+            runSpacing: 10,
+            runAlignment: WrapAlignment.spaceBetween,
+            children: const [],
+          ),
+          BlocConsumer<CategoriesListBloc, CategoriesListState>(
+            listener: (context, state) {
+              if (state.status == Status.error) {
+                return showCustomSnackBar(context, state.errorMessage);
+              }
+            },
+            builder: (context, state) {
+              if (state.status == Status.loading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state.status == Status.error) {
+                return const Center(
+                  child: Text('Terjadi Kesalahan'),
+                );
+              } else if (state.status == Status.success) {
+                return Wrap(
+                    spacing: 15,
                     alignment: WrapAlignment.start,
                     runSpacing: 10,
                     runAlignment: WrapAlignment.spaceBetween,
-                    children: state.categories.map(
-                      (categories) {
-                        return MenuCategoryCardWidget(
-                          category: categories,
-                        );
-                      },
-                    ).toList(),
-                  );
-                }
-                if (state is CategoriesFailed) {
-                  return const Center(
-                    child: Text("Error Load Data"),
-                  );
-                }
-                return const Center(
-                  child: Text('Waiting Moment'),
-                );
-              },
-            ),
+                    children: const [
+                      MenuCardWidget(),
+                    ]);
+              }
+              return const Center(
+                child: Text('Try Again'),
+              );
+            },
           ),
         ],
       ),

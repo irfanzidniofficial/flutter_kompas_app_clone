@@ -5,7 +5,7 @@ class UserModel {
   final String? address;
   final String? token;
   final String? username;
-  final String? cardNumber;
+  final String? phoneNumber;
   final String? job;
   final String? password;
 
@@ -16,19 +16,20 @@ class UserModel {
     this.address,
     this.token,
     this.username,
-    this.cardNumber,
+    this.phoneNumber,
     this.password,
     this.job,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        id: json['id'],
-        name: json['name'],
-        email: json['email'],
-        address: json['address'],
-        token: json['token'],
-        username: json['username'],
-        cardNumber: json['card_number'],
-        job: json['job'],
+        token: json['jwt'],
+        id: json['user']['id'],
+        name: json['user']['name'],
+        email: json['user']['email'],
+        address: json['user']['address'],
+        username: json['user']['username'],
+        phoneNumber: json['user']['phone_number'],
+        job: json['user']['job'],
+        password: json['user']['password'],
       );
 }

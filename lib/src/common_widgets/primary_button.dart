@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kompas_app_clone/src/constants/theme.dart';
 
-/// Primary button based on [ElevatedButton].
-/// Useful for CTAs in the app.
-/// @param text - text to display on the button.
-/// @param isLoading - if true, a loading indicator will be displayed instead of
-/// the text.
-/// @param onPressed - callback to be called when the button is pressed.
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton(
       {super.key, required this.text, this.isLoading = false, this.onPressed});
@@ -25,13 +19,15 @@ class PrimaryButton extends StatelessWidget {
         onPressed: onPressed,
         child: isLoading
             ? const CircularProgressIndicator()
-            : Text(text,
+            : Text(
+                text,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: medium,
-                )),
+                ),
+              ),
       ),
     );
   }

@@ -1,68 +1,53 @@
-class ImageUrl {
-  ImageUrl({
-    required this.url,
-  });
-
-  final String url;
-
-  ImageUrl copyWith({
-    String? url,
-  }) =>
-      ImageUrl(
-        url: url ?? this.url,
-      );
-
-  factory ImageUrl.fromJson(Map<String, dynamic> json) => ImageUrl(
-        url: json['url'],
-      );
-
-  Map<String, dynamic> toJson() => {
-        'url': url,
-      };
-}
-
-class ImageAtrributes {
-  ImageAtrributes({
-    required this.attributes,
-  });
-
-  final ImageUrl attributes;
-
-  ImageAtrributes copyWith({
-    ImageUrl? attributes,
-  }) =>
-      ImageAtrributes(
-        attributes: attributes ?? this.attributes,
-      );
-
-  factory ImageAtrributes.fromJson(Map<String, dynamic> json) =>
-      ImageAtrributes(
-        attributes: ImageUrl.fromJson(json['attributes']),
-      );
-  Map<String, dynamic> toJson() => {
-        'attributes': attributes.toJson(),
-      };
-}
-
 class ImageModel {
-  ImageModel({
-    required this.data,
-  });
+  Image? data;
 
-  final ImageAtrributes data;
+  ImageModel({this.data});
 
-  ImageModel copyWith({
-    ImageAtrributes? data,
-  }) =>
-      ImageModel(
-        data: data ?? this.data,
-      );
+  ImageModel.fromJson(Map<String, dynamic> json) {
+    data = json['data'] != null ? Image.fromJson(json['data']) : null;
+  }
 
-  factory ImageModel.fromJson(Map<String, dynamic> json) => ImageModel(
-        data: ImageAtrributes.fromJson(json['data']),
-      );
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (this.data != null) {
+      data['data'] = this.data!.toJson();
+    }
+    return data;
+  }
+}
 
-  Map<String, dynamic> toJson() => {
-        'data': data.toJson(),
-      };
+class Image {
+  UrlAttributes? attributes;
+
+  Image({this.attributes});
+
+  Image.fromJson(Map<String, dynamic> json) {
+    attributes = json['attributes'] != null
+        ? UrlAttributes.fromJson(json['attributes'])
+        : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (attributes != null) {
+      data['attributes'] = attributes!.toJson();
+    }
+    return data;
+  }
+}
+
+class UrlAttributes {
+  String? url;
+
+  UrlAttributes({this.url});
+
+  UrlAttributes.fromJson(Map<String, dynamic> json) {
+    url = json['url'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['url'] = url;
+    return data;
+  }
 }

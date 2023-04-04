@@ -50,18 +50,10 @@ class SavedScreen extends StatelessWidget {
           //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
           //   category: 'Regional',
           // ),
-          // NewsCard(
-          //   image: 'assets/img_news_two.png',
-          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-          //   category: 'Regional',
-          // ),
-          // NewsCard(
-          //   image: 'assets/img_news_two.png',
-          //   title: 'Menilik Prospek Pasar Saham di Tahun Kelinci Air',
-          //   category: 'Regional',
-          // ),
         ],
       ),
     );
   }
 }
+
+

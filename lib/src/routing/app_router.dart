@@ -4,6 +4,7 @@ import 'package:flutter_kompas_app_clone/src/features/authentication/presentatio
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/onboarding/onboarding_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signIn/sign_in_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/signUp/sign_up_screen.dart';
+import 'package:flutter_kompas_app_clone/src/features/authentication/presentation/splash/splash_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/menu/presentasion/detail_menu_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/menu/presentasion/menu_screen.dart';
 import 'package:flutter_kompas_app_clone/src/features/news/presentation/detail_news_screen.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_kompas_app_clone/src/routing/main_screen.dart';
 import 'package:go_router/go_router.dart';
 
 enum AppRoute {
+  splash,
   home,
   account,
   signIn,
@@ -29,12 +31,18 @@ enum AppRoute {
 final goRouter = GoRouter(
   initialLocation: '/',
   debugLogDiagnostics: true,
+  routerNeglect: true,
   routes: [
     GoRoute(
       path: '/',
-      name: AppRoute.onboarding.name,
-      builder: (context, state) => const OnboardingScreen(),
+      name: AppRoute.splash.name,
+      builder: (context, state) => const SplashScreen(),
       routes: [
+        GoRoute(
+          path: 'onboarding',
+          name: AppRoute.onboarding.name,
+          builder: (context, state) => const OnboardingScreen(),
+        ),
         GoRoute(
           path: 'sign-in',
           name: AppRoute.signIn.name,
@@ -44,11 +52,6 @@ final goRouter = GoRouter(
           path: 'sign-up',
           name: AppRoute.signUp.name,
           builder: (context, state) => const SignUpScreen(),
-        ),
-        GoRoute(
-          name: AppRoute.profile.name,
-          path: 'profile',
-          builder: (context, state) => const ProfileScreen(),
         ),
         GoRoute(
           path: 'edit-profile',
@@ -61,15 +64,28 @@ final goRouter = GoRouter(
           builder: (context, state) => const SettingScreen(),
         ),
         GoRoute(
-          path: 'detail-menu',
-          name: AppRoute.detailMenu.name,
-          builder: (context, state) => const DetailMenuScreen(),
-        ),
-        GoRoute(
-          path: 'main',
-          name: AppRoute.home.name,
-          builder: (context, state) => const MainScreen(),
-        ),
+            path: 'main',
+            name: AppRoute.home.name,
+            builder: (context, state) => const MainScreen(),
+            routes: [
+              GoRoute(
+                path: 'detail-news/:id',
+                name: AppRoute.detailNews.name,
+                builder: (context, state) {
+                  return const DetailNewsScreen();
+                },
+              ),
+              GoRoute(
+                  name: AppRoute.profile.name,
+                  path: 'profile/:id',
+                  builder: (context, state) {
+                    String? id = state.params['id'];
+
+                    return ProfileScreen(
+                      idUser: id.toString(),
+                    );
+                  }),
+            ]),
         GoRoute(
           path: 'saved',
           builder: (context, state) => const SavedScreen(),
@@ -79,9 +95,9 @@ final goRouter = GoRouter(
           builder: (context, state) => const MenuScreen(),
         ),
         GoRoute(
-          path: 'detail-news',
-          name: AppRoute.detailNews.name,
-          builder: (context, state) => const DetailNewsScreen(),
+          path: 'detail-menu',
+          name: AppRoute.detailMenu.name,
+          builder: (context, state) => const DetailMenuScreen(),
         ),
         GoRoute(
           name: AppRoute.search.name,

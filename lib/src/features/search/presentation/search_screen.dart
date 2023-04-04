@@ -6,7 +6,7 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = TextEditingController();
+    final controller = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -22,14 +22,15 @@ class SearchScreen extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(20),
             child: TextField(
-                autofocus: false,
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.search),
-                  hintText: 'Masukan kata kunci pencarian',
-                  suffixIcon: Icon(Icons.clear),
-                ),
-                onChanged: (text) {}),
-          )
+              autofocus: false,
+              decoration: const InputDecoration(
+                icon: Icon(Icons.search),
+                hintText: 'Masukan kata kunci pencarian',
+                suffixIcon: Icon(Icons.clear),
+              ),
+              onChanged: (text) {},
+            ),
+          ),
         ],
       ),
     );

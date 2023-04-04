@@ -49,7 +49,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ],
                   carouselController: carouselController,
                   options: CarouselOptions(
-                    viewportFraction: 4,
+                    viewportFraction: 1,
                     height: double.infinity,
                     enableInfiniteScroll: false,
                     onPageChanged: (index, reason) => {

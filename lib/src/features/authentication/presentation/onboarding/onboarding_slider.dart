@@ -91,6 +91,9 @@ class OnboardingSliderSecond extends StatelessWidget {
             color: Colors.black.withOpacity(0.7),
           ),
         ),
+
+        // Layer third (text)
+
         Positioned(
           left: 0,
           top: MediaQuery.of(context).size.height * 0.4,
@@ -142,6 +145,7 @@ class OnboardingSliderThird extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Layer firsth (image)
         Positioned(
           left: 0,
           bottom: 0,
@@ -152,11 +156,14 @@ class OnboardingSliderThird extends StatelessWidget {
             height: double.infinity,
           ),
         ),
+        // Layer second(black colour opacity)
         Positioned(
           child: Container(
+            height: double.infinity,
             color: Colors.black.withOpacity(0.7),
           ),
         ),
+        // Layer third (text)
         Positioned(
           left: 0,
           top: MediaQuery.of(context).size.height * 0.4,
@@ -217,64 +224,35 @@ class OnboardingSliderFourth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Positioned(
-          left: 0,
-          bottom: 0,
-          right: 0,
-          top: 0,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                subtitles[3],
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
+        Text(
+          subtitles[3],
+          textAlign: TextAlign.center,
+          style: blackTextStyle.copyWith(
+            fontWeight: semiBold,
+          ),
+        ),
+        gapH4,
+        RichText(
+          text: TextSpan(
+            text: 'Notifikasi ',
+            style: orangeTextStyle.copyWith(fontWeight: semiBold, fontSize: 20),
+            children: <TextSpan>[
+              TextSpan(
+                text: 'Berita',
+                style: blackTextStyle.copyWith(
                   fontWeight: semiBold,
+                  fontSize: 20,
                 ),
-              ),
-              gapH16,
-              RichText(
-                text: TextSpan(
-                  text: 'Notifikasi ',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.deepOrange,
-                    fontWeight: semiBold,
-                  ),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'Berita',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Image.asset(
-                image[3],
-                height: 444,
               ),
             ],
           ),
         ),
-        Positioned(
-          child: Column(
-            children: [
-              const Expanded(flex: 100, child: SizedBox()),
-              Expanded(
-                flex: 0,
-                child: Container(
-                  color: whiteColor,
-                ),
-              ),
-            ],
-          ),
+        Image.asset(
+          image[3],
+          height: 444,
         ),
       ],
     );
